@@ -1,0 +1,267 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+  font-family: "Arial";
+}
+
+h1{
+  font-size: 3.2em;
+}
+
+.menul{
+
+    float:left;
+
+
+}
+
+/*BOTONES TIENDA*/
+#botones_tienda_escritorio{
+  width: 100px; 
+  text-align: right;
+  margin-right: 70px;
+}
+
+#botones_tienda_smartphone{
+  visibility: hidden;
+  text-align: right;
+  width: 90px;
+}
+
+#botones_tienda_escritorio a img{
+  width: 30px;
+
+}
+
+#botones_tienda_smartphone a img{
+  width: 30px;
+}
+
+
+
+@media (max-width: 992px) {
+  #botones_tienda_escritorio{
+    visibility: visible;
+    height: 0px;
+    width: 0px;
+    margin: 0px;
+  }
+
+  #cont_tienda{
+
+    visibility: hidden;
+    
+  
+  }
+
+
+  #botones_tienda_escritorio a img{
+    height: 0px;
+    width: 0px;
+    margin: 0;
+    
+  }
+  
+  #botones_tienda_smartphone{
+    visibility: visible;
+    float:right;
+
+  }
+}
+
+/* PRINCIPAL */
+
+.fondo{
+
+  background-color:#F0E3CA;
+
+
+
+}
+#menu a{
+  font-family:Arial;
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+}
+
+#banner_principal{
+  
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  padding: 0;
+  
+}
+
+#banner_carta{
+  
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  padding: 0;
+  
+  
+}
+
+.banner{
+  
+  background: rgba(5, 5, 5, 0.7);
+  padding: 9%;
+
+}
+
+.bannerm{
+  
+  background: rgba(5, 5, 5, 0.7);
+  padding: 13%;
+
+}
+
+
+
+:root {
+  --color1: rgb(240, 227, 202);
+  --color2: rgb(255, 192, 63);
+  --color3: rgb(0, 0, 0);
+  --color4: rgb(240, 227, 202);
+}
+
+.text-color1{
+  color: var(--color1);
+}
+
+.color{
+  color: var(--color2);
+}
+
+.text-color3{
+  color: var(--color3);
+}
+
+@media (max-width: 992px) {
+  #banner_principal{
+    background-size: auto 100%;
+  }
+
+  .banner{
+    background: rgba(5, 5, 5, 0.7);
+    padding: 5%;
+    padding-top: 20%;
+    padding-bottom: 20%;
+  }
+
+  #botonmenuprincipal{
+    visibility: visible;
+    height: auto;
+    width: 100px;
+  }
+}
+
+.btn-outline-color1{
+  background: var(--color2);
+}
+
+.btn-outline-color1:hover{
+  background: var(--color4);
+}
+
+.izquierda{
+  
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  padding-bottom: 3%;
+  
+}
+
+.derecha{
+  
+  background-size: cover;
+ 
+}
+
+#productos img:hover{
+
+    color:black;
+    opacity: 0.7;
+
+}
+
+#seccion_pedido{
+  
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  opacity: 0.5;
+  padding: 0;
+
+}
+
+#seccion_menu{
+  
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  padding: 0;
+
+}
+
+.seccion_ham{
+
+  text-align: center;
+  
+}
+
+.tam{
+
+  font-size: 32px;
+
+}
+
+
+
+.letra_t{
+
+  width: 240px;
+
+}
+
+.footer_e{
+
+  text-decoration:none;
+
+}
+
+@media (max-width: 992px) {
+  #footer{
+    margin:auto;
+  }
+
+}
+
+img{
+
+  max-width: 60%;
+
+}
+
+.icono_c{
+
+  width: 50px;
+  height: 50px;
+
+}
+
+.input_t{
+
+  width:400px;
+  height:180%;
+
+}
