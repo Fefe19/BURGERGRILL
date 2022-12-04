@@ -128,7 +128,7 @@
               $precioTotal = calculaPrecios::calculaPrecioTotal($_SESSION["compra"]);
               echo $precioTotal." €";
             ?></h3>
-            <form class="ms-5" action='confirmaPedido.php' method='post'>
+            <form class="ms-4" action='confirmaPedido.php' method='post'>
             <p><input type="hidden" name="precioTotal" value=<?=$precioTotal?>></p>
             <button class="btn btn-outline-color1 fw-bold mb-1" style="height:50px; width:150px; border-color:black; border-width:3px; border-radius: 20px;" type="submit" type="submit" name='pos'>PAGAR</button>
           </form>

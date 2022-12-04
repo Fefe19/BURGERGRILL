@@ -136,7 +136,7 @@ session_start();
         <div class="col-lg-12 text-center">
         
         <?php 
-          
+          //Si existe la cookie la mostramos
           if (isset($_COOKIE['precioUltimoPedido'])){
             echo "PRECIO TOTAL DE TÚ PEDIDO ANTERIOR:";
             echo $_COOKIE['precioUltimoPedido']."€";

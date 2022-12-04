@@ -26,9 +26,9 @@ include 'pedido.php';
 $_SESSION['compra'] = [];
 session_start();
 if (isset($_SESSION['compra'])){
-  if(isset($_POST['bebida'])){var_dump($_POST['bebida']);
+  if(isset($_POST['bebida'])){($_POST['bebida']);
     
-    $prodSel = new Pedido($LlistaHamb[$_POST['bebida']]);
+    $prodSel = new Pedido($LlistaBe[$_POST['bebida']]);
     array_push($_SESSION['compra'],$prodSel);
     unset($_POST['bebida']);
   }

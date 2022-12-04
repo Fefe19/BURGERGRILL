@@ -22,11 +22,14 @@
 include 'lista.php';
 include 'pedido.php';
 
+
 $_SESSION['compra'] = [];
+//Iniciamos la sesión
 session_start();
+//Comprobar que existes la sesión y el post de entrante
 if (isset($_SESSION['compra'])){
   if(isset($_POST['entrante'])){($_POST['entrante']);
-    
+    //Guardamos los entrantes creados en un array en la sesion
     $prodSel = new Pedido($LlistaEn[$_POST['entrante']]);
     array_push($_SESSION['compra'],$prodSel);
     unset($_POST['entrante']);
@@ -66,7 +69,8 @@ if (isset($_SESSION['compra'])){
               </div> 
                 <div id="botones_tienda_escritorio" class="form-inline my-2 my-lg-0">
                   <a href="#" class="me-2"><img src="img/usuario.png" alt=""></a>
-                  <a id="cont_tienda"><?= count($_SESSION['compra']);?></a>
+                
+                  <a id="cont_tienda"><?=count($_SESSION['compra']);?></a>
                   <a href="carrito.php"><img src="img/carrito.png" alt=""></a>
                 </div>
             </div>
@@ -84,6 +88,7 @@ if (isset($_SESSION['compra'])){
       
         <table>
             <?php
+            //mostramos los productos
             foreach ($LlistaEn as $entrante){ ?>
               <div class="col-lg-4 mt-5 mb-5" >
                 

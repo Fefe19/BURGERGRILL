@@ -25,7 +25,7 @@ include 'pedido.php';
 $_SESSION['compra'] = [];
 session_start();
 if (isset($_SESSION['compra'])){
-  if(isset($_POST['hamburguesa'])){var_dump($_POST['hamburguesa']);
+  if(isset($_POST['hamburguesa'])){($_POST['hamburguesa']);
     
     $prodSel = new Pedido($LlistaHamb[$_POST['hamburguesa']]);
     array_push($_SESSION['compra'],$prodSel);
@@ -34,7 +34,7 @@ if (isset($_SESSION['compra'])){
 }else{
   $_SESSION['compra'] = array();
 }
-//$_SESSION['compra'] = [];
+
 ?>
     <header>
         <nav class="navbar navbar-expand-lg" style="background-color: #FFC03F;">

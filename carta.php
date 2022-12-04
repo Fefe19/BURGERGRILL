@@ -108,7 +108,7 @@ session_start();
                 <h3 class="mx-auto letra_t my-2 fs-4">BEBIDAS</h3> 
             </div>
             <div class="col-lg-4 mt-5 mb-5">
-                <a href="" id="productos"><img src="img/menu.jpg" ></a>
+                <a href="menuburgergrill.php" id="productos"><img src="img/menu.jpg" ></a>
                 <h3 class="mx-auto letra_t my-2 fs-4">MENU PARA PEQUES</h3> 
             </div>
         </div>
