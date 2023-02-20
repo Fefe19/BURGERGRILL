@@ -6,7 +6,7 @@
 }
 
 h1{
-  font-size: 3.2em;
+  font-size: 2.6em;
 }
 
 .menul{
@@ -18,7 +18,7 @@ h1{
 
 /*BOTONES TIENDA*/
 #botones_tienda_escritorio{
-  width: 100px; 
+  width: 350px; 
   text-align: right;
   margin-right: 70px;
 }
@@ -38,14 +38,25 @@ h1{
   width: 30px;
 }
 
+#video_movil{
+  width: 600px; 
+  height: 300px;
+}
 
 
 @media (max-width: 992px) {
   #botones_tienda_escritorio{
-    visibility: visible;
+    visibility: hidden;
     height: 0px;
     width: 0px;
     margin: 0px;
+  }
+
+  #video_movil{
+
+    width: 300px; 
+    height: 150px;
+
   }
 
   #cont_tienda{
@@ -67,6 +78,10 @@ h1{
     visibility: visible;
     float:right;
 
+  }
+
+  #admin{
+    text-align:center;
   }
 }
 
