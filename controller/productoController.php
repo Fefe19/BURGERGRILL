@@ -243,5 +243,15 @@ class productoController{
         require_once 'views/includes/footer.php';
 
     }
+    public static function creaRessenya(){
+        
+        session_start();
+        include ('modelo/productDAO.php');
+        require_once 'views/includes/cabecera.php';
+        $id_pedido = productDAO::mostrarPedido();
+        require_once 'views/creaRessenya.php';
+        require_once 'views/includes/footer.php';
+
+    }
     
 }
