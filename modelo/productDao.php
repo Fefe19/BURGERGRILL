@@ -140,6 +140,21 @@
             $con->close();
 
         }
+        
+         public static function mostrarPedido(){
+        $con = DataBase::connect();
+		 // Obtener el valor del parámetro "orden" del formulario HTML
+		$stmt = $con->prepare("SELECT id_pedido FROM pedido WHERE id_usuari = ? AND id_pedido NOT IN (SELECT id_pedido FROM ressenya)");
+        $stmt->bind_param("i",$_SESSION['usuariosr']);
+		$stmt->execute();
+        $stmt->bind_result($id_pedido);
+		$pedidoDB = array();
+		while ($stmt->fetch()) {
+    		$pedidoDB[] = $id_pedido;
+		}
+		$con->close();
+        return $pedidoDB;
+    }
 
         
 
