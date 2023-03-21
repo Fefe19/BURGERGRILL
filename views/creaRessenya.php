@@ -5,39 +5,42 @@
             <h1 class="mb-3 text-color1">¡RESEÑAS!</h1>
         </div>
 </section>
+
 <?php 
 if(isset($_SESSION['usuariosr'])){?>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#crear" data-bs-whatever="@getbootstrap">CREAR RESEÑA</button>
+<div class="mt-5 fw-bold mb-5" style="text-align: center;">
+<button type="button" class="btn btn-outline-color1 fw-bold" data-bs-toggle="modal" data-bs-target="#crear" data-bs-whatever="@getbootstrap" style="height:50px; width:200px; border-color:black; border-width:3px; border-radius: 20px;">CREAR RESEÑA</button>
+</div>
 <?php 
 }?>
-<div class="modal fade" id="crear" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<div class="modal fade" id="crear" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-content" style="background-color:#FFC03F">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+        <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">CREAR RESEÑA</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form method="post" id="formulario">
           <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">ID_pedido:</label>
-            <select id="pedido" name="pedido">
-            <?php 
-    for($i=0; $i < count($id_pedido);$i++){?>
-    
-    
-    <option value="<?=$id_pedido[$i]?>"><?=$id_pedido[$i]?></option>
-    <?php
-    }?>
-  </select> 
+            <label for="recipient-name" class="col-form-label fw-bold">ID_pedido:</label>
+            <select id="pedido" name="pedido" class="form-select " style="width:16%; display: inline-block;">
+              <?php
+               for ($i=0;$i < count($id_pedido);$i++){
+                ?>
+                <option value="<?=$id_pedido[$i]?>"><?=$id_pedido[$i]?></option>
+              <?php
+               }?>
+            </select>
           </div>
           <div class="mb-3">
-            <label for="message-text" class="col-form-label">Descripcion:</label>
+            <label for="message-text" class="col-form-label fw-bold">Descripcion:</label>
             <textarea class="form-control" id="descripcion"></textarea>
           </div>
           <div class="mb-3">
-            <label for="message-text" class="col-form-label">Descripcion:</label>
-            <select id="valoracion" name="valoracion">
+            <label for="message-text" class="col-form-label fw-bold">Valoración:</label>
+            <select id="valoracion" name="valoracion" class="form-select " style="width:14%; display: inline-block;">
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -48,49 +51,18 @@ if(isset($_SESSION['usuariosr'])){?>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" value="Enviar" onclick="creaValor()">Send message</button>
+        <button type="button" class="btn btn-outline-color1 fw-bold" value="Enviar" onclick="creaValor()" data-bs-dismiss="modal" style="height:40px; width:100px; border-color:black; border-width:3px; border-radius: 20px;">Crear</button>
       </div>
     </div>
   </div>
 </div>
-<!--
-<form method="post" id="formulario">
-  <label for="pedido">id_pedido:</label>
 
-  <select id="pedido" name="pedido">
-    <?php 
-    for($i=0; $i < count($id_pedido);$i++){?>
-    
-    
-    <option value="<?=$id_pedido[$i]?>"><?=$id_pedido[$i]?></option>
-    <?php
-    }?>
+<div class="mt-5 fw-bold mb-5" style="text-align: center;">
+  <label for="orden" style="display: inline-block;">Ordenar por </label>
+  <select id="orden" class="form-select fw-bold mx-2" style="width:20%; display: inline-block;">
+    <option value="asc">Valoración (ascendente)</option>
+    <option value="desc">Valoración (descendente)</option>
   </select>
-  
-  
-  <label for="descripcion">Descripción:</label>
-  <textarea id="descripcion" name="descripcion"></textarea><br><br>
-
-  <label for="valoracion">Valoración:</label>
-  <select id="valoracion" name="valoracion">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-  </select>
-
-  
-
-  <button type="button" value="Enviar" onclick="creaValor()"> Enviar </button>
-
-</form>-->
-
-<label for="orden">Filtrar por nota: </label>
-<select id="orden" name="orden">
-    <option value="asc">Ascendente</option>
-    <option value="desc">Descendente</option>
-<select>
+</div>
 
 <div  id="lista"></div>
