@@ -1,41 +1,32 @@
+//localStorage.removeItem('lastModalTime');
+
 function showModal(delay) {
-    setTimeout(function() {
-      // Mostrar la modal aquí
-      $('#exampleModal').modal('show');
-    }, delay);
-  }
-  
-  let currentTime = new Date().getTime();
-  
-  localStorage.setItem('entryTime', currentTime);
-  
-  if (!localStorage.getItem('modalShown') || (currentTime - localStorage.getItem('lastModalTime')) > 30 * 60 * 1000) {
-    // Get the entry time from localStorage
-    let entryTime = localStorage.getItem('entryTime');
-  
-    let delay1 = 10000 - (currentTime - entryTime);
-  
-    // Calculate the delay until the modal should be shown (30 minutes after entry time)
-    let delay2 = 30 * 60 * 1000 - (currentTime - entryTime);
-  
-    // Show the modal after the delay if the delay is positive
-    if (delay1 > 0) {
-      showModal(delay1);
-    }
-  
-    if (delay2 > 0) {
-      showModal(delay2);
-    }
-  
-    // Set the value of the key in localStorage to indicate that the modal has been shown
-    localStorage.setItem('modalShown', true);
-  }
+  setTimeout(function() {
+    // Mostrar la modal aquí
+    $('#exampleModal').modal('show');
+  }, delay);
+}
 
-let modalShown = false; // Variable de control para verificar si la modal ha sido mostrada
-
-$("#cerrar").mouseover(function () {
-  if (!modalShown) { // Si la modal no ha sido mostrada
-    $('#exampleModal').modal('show'); // Muestra la modal
-    modalShown = true; // Establece la variable de control a true para indicar que la modal ha sido mostrada
+// Función para mostrar la modal después de 10 segundos
+function showInitialModal() {
+  let lastModalTime = localStorage.getItem('lastModalTime');
+  if (!lastModalTime || (new Date().getTime() - lastModalTime) > 30 * 60 * 1000) {
+    showModal(10000); // Mostrar la modal después de 10 segundos
+    localStorage.setItem('lastModalTime', new Date().getTime()); // Almacenar la hora de la última modal
   }
-});
+}
+
+// Función para mostrar la modal después de 30 minutos
+function showSecondaryModal() {
+  let lastModalTime = localStorage.getItem('lastModalTime');
+  if (lastModalTime && (new Date().getTime() - lastModalTime) > 30 * 60 * 1000) {
+    showModal(0); // Mostrar la modal inmediatamente
+    localStorage.setItem('lastModalTime', new Date().getTime()); // Almacenar la hora de la última modal
+  }
+}
+
+// Llamar a showInitialModal en la carga inicial de la página
+showInitialModal();
+
+// Llamar a showSecondaryModal después de 30 minutos
+setInterval(showSecondaryModal, 30 * 60 * 1000);
