@@ -66,6 +66,8 @@
 <script src=<?=base_url."assets/js/bootstrap.bundle.min.js"?>></script>
 <script src=<?=base_url."assets/js/ressenya.js"?>></script>
 <script src=<?=base_url."assets/js/video.js"?>></script>
+<script src=<?=base_url."assets/js/modalCerrar.js"?>></script>
 <script src=<?=base_url."assets/js/modal.js"?>></script>
+<script src="https://unpkg.com/notie"></script>
 
 </html>
