@@ -11,6 +11,13 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/navbars/">
     <link href=<?=base_url."/assets/css/bootstrap.min.css"?> rel="stylesheet">
     <link href=<?=base_url."/assets/css/full_estil.css"?> rel="stylesheet" type="text/css" media="screen">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css">
+    <style>
+      /* override styles here */
+      .notie-container {
+        box-shadow: none;
+      }
+    </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
